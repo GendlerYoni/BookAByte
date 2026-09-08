@@ -1,0 +1,126 @@
+/* ================================
+   Restaurant Form Page Container
+   Wrapper for create/update restaurant form.
+================================ */
+.restaurant-form-page {
+    max-width: 58rem;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+}
+
+/* ================================
+   Form Card
+   Main card holding the form content.
+================================ */
+.restaurant-form-card {
+    background-color: var(--surface-color);
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+}
+
+/* ================================
+   Page Title
+   Main heading for the form page.
+================================ */
+.page-title {
+    margin: 0 0 2rem 0;
+    font-size: 3rem;
+    color: var(--text-color);
+    text-align: center;
+}
+
+/* Decorative underline for title. */
+.restaurant-form-card h2::after {
+    content: "";
+    display: block;
+    width: 18rem;
+    height: 4px;
+    background-color: var(--primary-color);
+    margin: 0.5rem auto 0 auto;
+    border-radius: 2px;
+}
+
+/* ================================
+   Form Layout
+   Vertical layout for form fields.
+================================ */
+.restaurant-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Row for time inputs (opening/closing). */
+.time-row {
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* Equal width fields inside time row. */
+.time-row .form-group {
+    flex: 1;
+}
+
+/* Submit button styling. */
+.restaurant-form button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.4rem;
+    margin-top: 1rem;
+}
+
+/* ================================
+   Form Messages
+   Error and success messages inside form.
+================================ */
+.error-message,
+.success-message {
+    margin-bottom: 1rem;
+    padding: 0.9rem 1rem;
+    font-size: 1.1rem;
+    text-align: right;
+}
+
+/* ================================
+   Textarea Styling
+   Allows vertical resizing.
+================================ */
+.restaurant-form textarea {
+    resize: vertical;
+    min-height: 7rem;
+}
+
+/* File input styling. */
+.restaurant-form input[type="file"] {
+    padding: 0.8rem;
+    cursor: pointer;
+}
+
+/* ================================
+   Current Image Section
+   Displays existing restaurant image
+   when updating a restaurant.
+================================ */
+.current-image-section {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Label above current image. */
+.current-image-label {
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+    color: var(--secondary-text-color);
+}
+
+/* Current restaurant image preview. */
+.current-restaurant-image {
+    display: block;
+    width: 100%;
+    max-width: 20rem;
+    height: 12rem;
+    object-fit: cover;
+    margin: 0 auto;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--border-color);
+}

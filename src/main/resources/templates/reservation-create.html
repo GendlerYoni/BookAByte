@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>הזמנת שולחן</title>
+
+    <link rel="stylesheet" href="/css/navbarStyle.css">
+    <link rel="stylesheet" href="/css/commonStyle.css">
+    <link rel="stylesheet" href="/css/reservationCreateStyle.css">
+</head>
+<body>
+
+<div th:replace="~{navigationBar :: navbar}"></div>
+
+<div class="reservation-page">
+
+    <section class="restaurant-info-card">
+        <img id="restaurantImage"
+             src="/restImg/default.png"
+             alt="תמונת המסעדה"
+             class="restaurant-image">
+
+        <div class="restaurant-details">
+            <h2 id="restaurantName" class="page-title">טוען...</h2>
+
+            <div class="restaurant-meta">
+                <span id="restaurantType" class="badge">---</span>
+
+                <span class="rating-box">
+          דירוג:
+          <span id="restaurantRating">0.0</span>
+          <span id="reviewCount">(0)</span>
+        </span>
+            </div>
+
+            <p class="hours-info">
+                <strong>שעות פעילות:</strong>
+                <span id="restaurantOpeningHour">---</span>
+                -
+                <span id="restaurantClosingHour">---</span>
+            </p>
+
+            <p id="restaurantDescription" class="restaurant-description">
+                תיאור המסעדה יופיע כאן.
+            </p>
+        </div>
+    </section>
+
+    <section class="reservation-content-row">
+
+        <div class="reviews-card">
+            <h2 class="section-title">
+                ביקורות
+                <span id="averageScoreText" class="score-text"></span>
+            </h2>
+
+            <div class="reviews-summary">
+                <span id="reviewsAverage">0.0</span>
+                <span id="reviewsAmount">(0 ביקורות)</span>
+            </div>
+
+            <div id="reviewsContainer" class="reviews-list">
+                <p class="empty-message">אין עדיין ביקורות למסעדה זו.</p>
+            </div>
+        </div>
+
+        <div class="reservation-form-card">
+            <h2 class="section-title">פרטי ההזמנה</h2>
+
+            <div id="errorMessage" class="error-message hidden"></div>
+            <div id="successMessage" class="success-message hidden"></div>
+
+            <form id="reservationForm" class="restaurant-form">
+
+                <div class="form-group">
+                    <label for="reservationDate">תאריך ההזמנה:</label>
+                    <input type="date"
+                           id="reservationDate"
+                           name="reservationDate"
+                           onclick="this.showPicker()"
+                           required>
+                </div>
+
+                <div class="time-row">
+                    <div class="form-group">
+                        <label for="reservationTime">שעה:</label>
+                        <select id="reservationTime" name="reservationTime" required>
+                            <option value="" disabled selected>בחר שעה</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="guests">מספר סועדים:</label>
+                        <input type="number"
+                               id="guests"
+                               name="guests"
+                               min="1"
+                               placeholder="לדוגמה: 2"
+                               required>
+                    </div>
+                </div>
+
+                <button type="button" id="checkAvailabilityBtn">
+                    בדוק זמינות
+                </button>
+
+
+                <button type="submit" id="confirmReservationBtn" class="hidden">
+                    אשר הזמנה
+                </button>
+
+            </form>
+        </div>
+
+    </section>
+
+</div>
+
+<script type="module" src="/js/reservationCreate.js"></script>
+
+
+</body>
+</html>

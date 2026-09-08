@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>כתיבת ביקורת</title>
+
+  <style>
+    .review-create-container {
+      display: none !important;
+    }
+
+    .authorized .review-create-container {
+      display: flex !important;
+    }
+  </style>
+
+  <script type="module" src="/js/reviewAccessGuard.js"></script>
+
+  <link rel="stylesheet" href="/css/navbarStyle.css">
+  <link rel="stylesheet" href="/css/commonStyle.css">
+  <link rel="stylesheet" href="/css/reviewCreateStyle.css">
+</head>
+<body>
+
+<div th:replace="~{navigationBar :: navbar}"></div>
+
+<div class="review-create-container">
+
+  <div class="review-right">
+    <img id="restaurantImage" src="/images/review.png" alt="כתיבת ביקורת">
+  </div>
+
+  <div class="review-left">
+
+    <h2>שתפו את החוויה שלכם</h2>
+
+    <div class="reservation-summary">
+
+      <img id="summaryRestaurantImage"
+           src="/restImg/default.png"
+           alt="תמונת מסעדה">
+
+      <p class="review-subtitle">
+        ביקרתם במסעדה
+        <span id="restaurantName">---</span>
+        בתאריך
+        <span id="reservationDate">---</span>
+        בשעה
+        <span id="reservationTime">---</span>
+        והייתם
+        <span id="guestsCount">---</span>
+        סועדים.
+      </p>
+
+    </div>
+
+    <div id="errorMessage" class="error-message hidden"></div>
+    <div id="successMessage" class="success-message hidden"></div>
+
+    <form id="reviewForm">
+
+      <div class="form-group rating-group">
+        <span class="rating-title">איך הייתם מדרגים את החוויה?</span>
+
+        <div class="star-rating">
+          <input type="radio" id="star5" name="score" value="5" required>
+          <label for="star5">★</label>
+
+          <input type="radio" id="star4" name="score" value="4">
+          <label for="star4">★</label>
+
+          <input type="radio" id="star3" name="score" value="3">
+          <label for="star3">★</label>
+
+          <input type="radio" id="star2" name="score" value="2">
+          <label for="star2">★</label>
+
+          <input type="radio" id="star1" name="score" value="1">
+          <label for="star1">★</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="revDescription">
+          ספר לנו על האווירה, השירות והטעם... נהניתם?
+        </label>
+
+        <textarea
+                id="revDescription"
+                name="revDescription"
+                rows="5"
+                placeholder="לדוגמה: האוכל היה טעים, השירות היה מהיר והאווירה הייתה נעימה..."
+                required></textarea>
+      </div>
+
+      <button type="submit">שלח ביקורת</button>
+
+    </form>
+
+  </div>
+
+</div>
+
+<script type="module" src="/js/reviewCreate.js"></script>
+
+</body>
+</html>

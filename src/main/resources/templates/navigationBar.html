@@ -1,0 +1,22 @@
+<nav th:fragment="navbar">
+    <ul class="nav-bar">
+        <li class="user-menu">
+            <span class="nav-item-content">
+                שלום, <span id="userName">אורח</span>
+            </span>
+
+                    <div id="userDropdown" class="user-dropdown"></div>
+        </li>
+        <li>
+            <a href="/home">כל המסעדות</a>
+        </li>
+        <li class="logo-item">
+            <a href="/home" class="logo-link">
+                <img src="/images/logo.png" alt="BookAByte Logo" class="logo-img">
+                <span class="logo-text">BookAByte</span>
+            </a>
+        </li>
+    </ul>
+
+    <script type="module" src="/js/navbar.js"></script>
+</nav>

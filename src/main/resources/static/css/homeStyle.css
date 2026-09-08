@@ -1,0 +1,320 @@
+/* ================================
+   Homepage Container
+   Centers the main homepage content
+   and limits its maximum width.
+================================ */
+.homepage-container {
+    max-width: 90rem;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+}
+
+/* ================================
+   Homepage Header
+   Styles the main page title and
+   subtitle shown above the filters.
+================================ */
+.homepage-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.homepage-header h2 {
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--text-color);
+}
+
+/* Decorative underline below the main title. */
+.homepage-header h2::after {
+    content: "";
+    display: block;
+    width: 14rem;
+    height: 4px;
+    background-color: var(--primary-color);
+    margin: 0.7rem auto 0 auto;
+    border-radius: 2px;
+}
+
+.homepage-subtitle {
+    margin: 1rem 0 0 0;
+    font-size: 1.3rem;
+    color: var(--secondary-text-color);
+}
+
+/* ================================
+   Filters Card
+   Main container for all restaurant
+   search and filtering controls.
+================================ */
+.filters-card {
+    background-color: var(--surface-color);
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+/* Layout for dividing filters into two columns. */
+.filters-layout {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 3rem;
+}
+
+/* Right side filters: search and rating. */
+.right-filters {
+    flex: 1;
+    min-width: 20rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-left: 3rem;
+    border-left: 2px dashed var(--border-color);
+}
+
+/* Shared titles for filter sections. */
+.search-group label, .rating-title, .type-filter-title {
+    display: block;
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+    color: var(--secondary-text-color);
+    font-weight: bold;
+}
+
+/* Search input styling. */
+.search-group input {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+}
+
+/* ================================
+   Rating Filter
+   Displays clickable star filters
+   for minimum restaurant rating.
+================================ */
+.rating-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.star-rating-filter {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+/* Hide radio inputs and use labels as stars. */
+.star-rating-filter input {
+    display: none;
+}
+
+.star-rating-filter label {
+    font-size: 2.2rem;
+    color: var(--border-color);
+    cursor: pointer;
+    transition: color 0.2s ease;
+    padding: 0 0.1rem;
+}
+
+/* Highlights stars on hover or when selected. */
+.star-rating-filter label:hover,
+.star-rating-filter label:hover ~ label,
+.star-rating-filter input:checked ~ label {
+    color: var(--primary-color);
+}
+
+/* Button for clearing the selected rating filter. */
+#clearRatingFilterBtn {
+    background-color: transparent;
+    color: var(--error-text-color);
+    border: 1px solid var(--error-border-color);
+    padding: 0.5rem 0.8rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* ================================
+   Type Filters
+   Displays restaurant category buttons
+   in a grid layout.
+================================ */
+.left-filters {
+    flex: 1;
+    min-width: 20rem;
+}
+
+.type-buttons-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.type-filter-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    padding: 0.8rem 0;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+/* Active state for selected restaurant type filters. */
+.type-filter-btn.active {
+    background-color: var(--primary-hover);
+    box-shadow: inset 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Reset all filters link/button. */
+.reset-link {
+    background: none;
+    border: none;
+    color: var(--secondary-text-color);
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-right: auto;
+    padding: 0;
+}
+
+.reset-link:hover {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* ================================
+   Restaurants Grid
+   Displays restaurant cards in a
+   responsive multi-column layout.
+================================ */
+.restaurants-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+/* ================================
+   Restaurant Card
+   Visual styling for each restaurant
+   preview on the homepage.
+================================ */
+.restaurant-card {
+    background-color: var(--surface-color);
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    padding: 1.2rem;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Card hover effect. */
+.restaurant-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0.5rem 1.2rem rgba(124, 90, 184, 0.2);
+}
+
+/* Restaurant image inside the card. */
+.restaurant-card-image {
+    width: 100%;
+    height: 13rem;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--border-color);
+}
+
+/* Restaurant title inside the card. */
+.restaurant-card-title {
+    margin: 1rem 0 1.2rem 0;
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+/* Container for restaurant details. */
+.restaurant-card-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+/* Type and rating badges inside the card. */
+.restaurant-card-type, .restaurant-card-rating {
+    padding: 0.4rem 0.8rem;
+    border: 2px solid var(--border-color);
+    background: white;
+    border-radius: var(--border-radius);
+}
+
+/* Highlights the restaurant rating. */
+.restaurant-card-rating {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* ================================
+   Status Message
+   Used for empty results or loading
+   error messages on the homepage.
+================================ */
+.status-message {
+    max-width: 45rem;
+    margin: 2rem auto;
+    padding: 2rem;
+    text-align: center;
+    font-size: 1.4rem;
+    background-color: white;
+    border: 2px dashed var(--border-color);
+    border-radius: var(--border-radius);
+    color: var(--secondary-text-color);
+}
+
+/* ================================
+   Responsive Layout - Tablets
+   Reduces the restaurant grid from
+   three columns to two columns.
+================================ */
+@media (max-width: 1024px) {
+    .restaurants-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ================================
+   Responsive Layout - Mobile
+   Stacks filters vertically and shows
+   restaurant cards in one column.
+================================ */
+@media (max-width: 768px) {
+    .filters-layout {
+        flex-direction: column;
+    }
+
+    .right-filters {
+        padding-left: 0;
+        border-left: none;
+        border-bottom: 2px dashed var(--border-color);
+        padding-bottom: 2rem;
+    }
+
+    .restaurants-container {
+        grid-template-columns: 1fr;
+    }
+
+    .homepage-header h2 {
+        font-size: 2.2rem;
+    }
+
+    .reset-link {
+        margin-right: 0;
+        margin-top: 1rem;
+    }
+}

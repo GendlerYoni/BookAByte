@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <link rel="stylesheet" href="/css/navbarStyle.css">
+  <link rel="stylesheet" href="/css/commonStyle.css">
+  <link rel="stylesheet" href="/css/registerStyle.css">
+</head>
+<body>
+
+<div th:replace="~{navigationBar :: navbar}"></div>
+
+<div class="register-container">
+
+  <div class="register-right">
+    <img src="/images/registerpic.png" alt="BookAByte">
+  </div>
+
+  <div class="register-left">
+    <h2>הרשמה</h2>
+
+    <p class="register-subtitle">ברוכים הבאים!</p>
+
+    <div id="errorMessage" class="error-message hidden"></div>
+
+    <form id="registerForm">
+      <div class="form-group">
+        <label for="username">שם משתמש:</label>
+        <input type="text" id="username" name="username" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">סיסמה:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword">אימות סיסמה:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+      </div>
+
+      <div class="form-group role-group">
+        <span class="role-title">סוג משתמש:</span>
+
+        <div class="role-options">
+          <label>
+            <input type="radio" name="role" value="CUSTOMER" required>
+            לקוח
+          </label>
+
+          <label>
+            <input type="radio" name="role" value="ADMIN" required>
+            מנהל מסעדה
+          </label>
+        </div>
+      </div>
+
+      <a href="/login" class="login-link">כבר רשום? התחבר כאן</a>
+
+      <button type="submit">הירשם</button>
+    </form>
+  </div>
+
+</div>
+
+<script type="module" src="/js/register.js"></script>
+
+</body>
+</html>

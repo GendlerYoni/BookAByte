@@ -1,0 +1,315 @@
+/* ================================
+   Global Design Variables
+   Defines the main color palette,
+   shared borders, states, and theme
+   values used across the website.
+================================ */
+:root {
+    --primary-color: #7C5AB8;
+    --primary-hover: #6946A7;
+
+    --background-color: #F4F1F8;
+    --surface-color: #F8F5FB;
+
+    --text-color: #1D1D2F;
+    --secondary-text-color: #333333;
+
+    --border-color: #B9A6D6;
+
+    --navbar-gradient-start: rgba(147, 112, 219, 0.5);
+    --navbar-gradient-end: white;
+    --navbar-border-color: #6946A7;
+    --navbar-link-color: #3F59C6;
+    --navbar-link-hover-color: #2C3E50;
+
+    --error-bg-color: #FDECEC;
+    --error-border-color: #D32F2F;
+    --error-text-color: #B71C1C;
+
+    --success-bg-color: #EAF8EC;
+    --success-border-color: #4CAF50;
+    --success-text-color: #1B5E20;
+
+    --chart-secondary-color: #D4C6F0;
+
+    --disabled-bg-color: #95A5A6;
+    --disabled-opacity: 0.85;
+
+    --cancelled-bg-color: #F0F0F0;
+    --cancelled-border-color: #CCCCCC;
+    --cancelled-text-color: #888888;
+
+    --danger-color: #e74c3c;
+    --danger-hover: #c0392b;
+
+    --border-radius: 12px;
+}
+
+/* ================================
+   Global Box Sizing
+   Makes element width and height
+   calculations more predictable.
+================================ */
+* {
+    box-sizing: border-box;
+}
+
+/* ================================
+   Base Page Styling
+   Sets the default RTL layout,
+   text color, and page background.
+================================ */
+body {
+    margin: 0;
+    direction: rtl;
+    color: var(--text-color);
+    background: linear-gradient(var(--navbar-gradient-start), var(--navbar-gradient-end));
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* ================================
+   Default Button Styling
+   Shared base style for regular
+   buttons across the application.
+================================ */
+button {
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* Button hover state. */
+button:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Disabled button state. */
+button:disabled {
+    background-color: var(--disabled-bg-color);
+    cursor: not-allowed;
+    opacity: var(--disabled-opacity);
+}
+
+/* Keeps disabled buttons unchanged on hover. */
+button:disabled:hover {
+    background-color: var(--disabled-bg-color);
+}
+
+/* ================================
+   Form Field Styling
+   Shared styling for inputs,
+   select boxes, and text areas.
+================================ */
+input,
+select,
+textarea {
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: white;
+    font: inherit;
+}
+
+/* Form field focus state. */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+/* ================================
+   Error Message Styling
+   Used for validation errors,
+   failed requests, and warnings.
+================================ */
+.error-message {
+    background-color: var(--error-bg-color);
+    border: 1px solid var(--error-border-color);
+    border-radius: var(--border-radius);
+    color: var(--error-text-color);
+}
+
+/* ================================
+   Success Message Styling
+   Used for successful actions such
+   as login, registration, and updates.
+================================ */
+.success-message {
+    background-color: var(--success-bg-color);
+    border: 1px solid var(--success-border-color);
+    border-radius: var(--border-radius);
+    color: var(--success-text-color);
+}
+
+/* Shared layout for error and success messages. */
+.error-message,
+.success-message {
+    width: 100%;
+    max-width: 32rem;
+    margin: 1rem auto;
+    padding: 0.9rem 1rem;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+/* ================================
+   Status Message Box
+   Used for empty states and general
+   page-level feedback messages.
+================================ */
+.status-message {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    border: 2px dashed var(--border-color);
+    text-align: center;
+    font-size: 1.3rem;
+    color: var(--secondary-text-color);
+}
+
+/* Error variant for status messages. */
+.status-message.error-message {
+    color: var(--error-text-color);
+    border-color: var(--error-border-color);
+    background-color: var(--error-bg-color);
+}
+
+/* ================================
+   Utility Classes
+   General reusable helper classes.
+================================ */
+.hidden {
+    display: none;
+}
+
+/* ================================
+   Form Layout
+   Defines a reusable vertical layout
+   for form fields and labels.
+================================ */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+/* Form label styling. */
+.form-group label {
+    margin-bottom: 0.6rem;
+    font-size: 1.6rem;
+    color: var(--secondary-text-color);
+    text-align: right;
+}
+
+/* Form controls inside form groups. */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.2rem;
+}
+
+/* ================================
+   Shared Card Styling
+   Common visual style for cards used
+   in restaurants, reservations, forms,
+   charts, reviews, and information boxes.
+================================ */
+.restaurant-card,
+.reservation-card,
+.restaurant-form-card,
+.chart-card,
+.restaurant-info-card,
+.reviews-card,
+.reservation-form-card {
+    background-color: var(--surface-color);
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius);
+}
+
+/* ================================
+   Reservation Details Layout
+   Used to display reservation-related
+   information in a clean vertical list.
+================================ */
+.reservation-details-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+/* Single row inside reservation details. */
+.reservation-detail-item {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1.05rem;
+    color: var(--secondary-text-color);
+}
+
+/* Highlighted label inside detail rows. */
+.detail-label {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* ================================
+   Outline Button
+   Secondary button style used for
+   navigation/actions that should be
+   visible but less dominant.
+================================ */
+.outline-btn {
+    padding: 0.8rem;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid var(--primary-color);
+    background: transparent;
+    color: var(--primary-color);
+}
+
+/* Outline button hover state. */
+.outline-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* ================================
+   Confirmation / Danger States
+   Used for delete/cancel confirmation
+   actions before final submission.
+================================ */
+.confirm-mode,
+.danger {
+    background-color: var(--error-border-color) !important;
+    border-color: var(--error-text-color) !important;
+    color: white !important;
+}
+
+/* Hover state for confirmation/danger actions. */
+.confirm-mode:hover,
+.danger:hover {
+    background-color: var(--error-text-color) !important;
+}
+
+/* ================================
+   Cancelled Status
+   Used after a reservation was cancelled,
+   preventing further interaction.
+================================ */
+.cancelled-status {
+    background-color: var(--cancelled-bg-color) !important;
+    border-color: var(--cancelled-border-color) !important;
+    color: var(--cancelled-text-color) !important;
+    cursor: not-allowed !important;
+    pointer-events: none;
+}

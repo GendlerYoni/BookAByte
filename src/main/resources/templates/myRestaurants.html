@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>BookAByte - המסעדות שלי</title>
+
+  <script type="module" src="/js/adminAccess.js"></script>
+
+  <link rel="stylesheet" href="/css/navbarStyle.css">
+  <link rel="stylesheet" href="/css/commonStyle.css">
+  <link rel="stylesheet" href="/css/myRestaurantsStyle.css">
+</head>
+<body>
+
+<div th:replace="~{navigationBar :: navbar}"></div>
+
+<div class="my-restaurants-container">
+
+  <div class="page-header">
+    <h2>המסעדות שלי</h2>
+    <p class="page-subtitle">ניהול המסעדות שלך, עדכון פרטים וצפייה בסטטיסטיקות.</p>
+  </div>
+
+  <div class="create-btn-container">
+    <a href="/restaurant/create" class="create-restaurant-btn">יצירת מסעדה חדשה</a>
+  </div>
+
+  <div id="statusMessage" class="status-message hidden"></div>
+
+  <section id="restaurantsContainer" class="restaurants-container"></section>
+
+</div>
+
+<script type="module" src="/js/myRestaurants.js"></script>
+
+</body>
+</html>

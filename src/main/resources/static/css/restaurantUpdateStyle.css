@@ -1,0 +1,11 @@
+/* ================================
+   Page Subtitle
+   Secondary text displayed below
+   main page titles for additional context.
+================================ */
+.page-subtitle {
+    margin: -1rem 0 2rem 0;
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--secondary-text-color);
+}

@@ -1,0 +1,317 @@
+/* ================================
+   Reservation Page Container
+   Main wrapper for the reservation
+   creation page.
+================================ */
+.reservation-page {
+    max-width: 78rem;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+}
+
+/* ================================
+   Shared Card Styling
+   Common style for restaurant info,
+   reviews, and reservation form cards.
+================================ */
+.restaurant-info-card,
+.reviews-card,
+.reservation-form-card {
+    background-color: var(--surface-color);
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+}
+
+/* ================================
+   Restaurant Info Card
+   Displays restaurant image and details.
+================================ */
+.restaurant-info-card {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+}
+
+/* Restaurant image inside info card. */
+.restaurant-image {
+    width: 20rem;
+    height: 12.5rem;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--border-color);
+}
+
+/* Restaurant textual details area. */
+.restaurant-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Main restaurant title. */
+.page-title {
+    margin: 0 0 1rem 0;
+    font-size: 3rem;
+    color: var(--text-color);
+    text-align: right;
+}
+
+/* Container for restaurant metadata badges. */
+.restaurant-meta {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+
+/* Shared badge styling. */
+.badge,
+.rating-box {
+    display: inline-block;
+    padding: 0.5rem 0.9rem;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--border-color);
+    background-color: white;
+    color: var(--secondary-text-color);
+    font-size: 1.1rem;
+}
+
+/* Rating badge highlight. */
+.rating-box {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Opening hours text. */
+.hours-info {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+    color: var(--secondary-text-color);
+}
+
+/* Restaurant description paragraph. */
+.restaurant-description {
+    margin: 1rem 0 0 0;
+    line-height: 1.7;
+    font-size: 1.15rem;
+    color: var(--secondary-text-color);
+}
+
+/* ================================
+   Main Content Row
+   Holds reviews and reservation form
+   side by side.
+================================ */
+.reservation-content-row {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+/* Gives both content cards equal width. */
+.reviews-card,
+.reservation-form-card {
+    flex: 1;
+}
+
+/* ================================
+   Section Titles
+   Shared title style for page sections.
+================================ */
+.section-title {
+    margin: 0 0 1.3rem 0;
+    font-size: 2.1rem;
+    color: var(--text-color);
+    text-align: center;
+}
+
+/* Decorative underline for section titles. */
+.section-title::after {
+    content: "";
+    display: block;
+    width: 12rem;
+    height: 4px;
+    background-color: var(--primary-color);
+    margin: 0.5rem auto 0 auto;
+    border-radius: 2px;
+}
+
+/* Score text near reviews. */
+.score-text {
+    font-size: 1.2rem;
+    color: var(--secondary-text-color);
+}
+
+/* ================================
+   Reviews Summary
+   Displays average rating / review count.
+================================ */
+.reviews-summary {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Scrollable list of reviews. */
+.reviews-list {
+    max-height: 28rem;
+    overflow-y: auto;
+    padding: 0.5rem;
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background-color: white;
+}
+
+/* Single review item. */
+.review-item {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Removes separator from last review. */
+.review-item:last-child {
+    border-bottom: none;
+}
+
+/* Review header with user/date/score data. */
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+/* Review score highlight. */
+.review-score {
+    color: var(--primary-color);
+}
+
+/* Review text content. */
+.review-description {
+    margin: 0;
+    line-height: 1.6;
+    color: var(--secondary-text-color);
+}
+
+/* Review date text. */
+.review-date {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--secondary-text-color);
+}
+
+/* Empty reviews/message state. */
+.empty-message {
+    margin: 0;
+    padding: 1rem;
+    text-align: center;
+    color: var(--secondary-text-color);
+}
+
+/* ================================
+   Reservation Form Messages
+   Messages shown inside the form card.
+================================ */
+.reservation-form-card .error-message,
+.reservation-form-card .success-message {
+    margin-bottom: 1rem;
+    padding: 0.9rem 1rem;
+    font-size: 1.1rem;
+    text-align: right;
+}
+
+/* ================================
+   Reservation Form
+   Form layout for choosing date,
+   time, guests and confirmation.
+================================ */
+.restaurant-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Row for time-related inputs. */
+.time-row {
+    display: flex;
+    gap: 1.5rem;
+}
+
+/* Equal width fields inside time row. */
+.time-row .form-group {
+    flex: 1;
+}
+
+/* Submit/check button inside form. */
+.restaurant-form button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.4rem;
+    margin-top: 1rem;
+}
+
+/* ================================
+   Confirm Reservation Button
+   Success-colored final confirmation.
+================================ */
+#confirmReservationBtn {
+    background-color: var(--success-border-color);
+}
+
+/* Hover effect for confirm button. */
+#confirmReservationBtn:hover {
+    background-color: var(--success-text-color);
+}
+
+/* ================================
+   Responsive Layout - Tablet
+   Stacks restaurant info and content
+   sections vertically.
+================================ */
+@media (max-width: 900px) {
+    .restaurant-info-card,
+    .reservation-content-row {
+        flex-direction: column;
+    }
+
+    .restaurant-image {
+        width: 100%;
+        height: 18rem;
+    }
+
+    .page-title {
+        text-align: center;
+    }
+
+    .restaurant-meta {
+        justify-content: center;
+    }
+}
+
+/* ================================
+   Responsive Layout - Mobile
+   Adjusts form rows and title sizes.
+================================ */
+@media (max-width: 600px) {
+    .time-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .page-title {
+        font-size: 2.3rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+}

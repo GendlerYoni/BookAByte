@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>BookAByte - סטטיסטיקות</title>
+
+  <script type="module" src="/js/adminAccess.js"></script>
+
+  <link rel="stylesheet" href="/css/navbarStyle.css">
+  <link rel="stylesheet" href="/css/commonStyle.css">
+  <link rel="stylesheet" href="/css/statisticsStyle.css">
+</head>
+<body>
+
+<div th:replace="~{navigationBar :: navbar}"></div>
+
+<div class="statistics-container">
+
+  <div class="stats-header">
+    <h2 id="resName">סטטיסטיקות מסעדה</h2>
+  </div>
+
+  <div id="statusMessage" class="status-message hidden"></div>
+
+  <div class="summary-charts-row">
+    <div class="chart-card">
+      <h3>שיעור ביטולים</h3>
+      <div class="canvas-container small">
+        <canvas id="cancellationPie"></canvas>
+        <p id="cancellationRateValue" class="chart-overlay-text">--%</p>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <h3>ממוצע סועדים בהזמנה</h3>
+      <div class="summary-content">
+        <p id="avgGroupSizeValue" class="large-stat">--</p>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <h3>לקוחות חוזרים</h3>
+      <div class="canvas-container small">
+        <canvas id="returnCustomerPie"></canvas>
+        <p id="returnCustomerRateValue" class="chart-overlay-text">--%</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="charts-grid">
+    <div class="chart-card">
+      <h3>הזמנות לפי יום</h3>
+      <div class="canvas-container">
+        <canvas id="ordersByDayChart"></canvas>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <h3>התפלגות דירוגים</h3>
+      <div class="canvas-container">
+        <canvas id="ratingDistributionChart"></canvas>
+      </div>
+    </div>
+
+    <div class="chart-card full-width">
+      <h3>הזמנות לפי שעה</h3>
+      <div class="canvas-container large">
+        <canvas id="ordersByHourChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="module" src="/js/statistics.js"></script>
+
+</body>
+</html>

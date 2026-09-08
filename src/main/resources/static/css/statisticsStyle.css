@@ -1,0 +1,171 @@
+/* ================================
+   Statistics Page Container
+   Main wrapper for the statistics page.
+================================ */
+.statistics-container {
+    max-width: 90rem;
+    margin: 3rem auto;
+    padding: 0 5vw;
+}
+
+/* ================================
+   Page Header
+   Displays main statistics title.
+================================ */
+.stats-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Main title text */
+.stats-header h2 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    color: var(--text-color);
+    margin: 0;
+}
+
+/* Decorative underline */
+.stats-header h2::after {
+    content: "";
+    display: block;
+    width: 8rem;
+    height: 0.25rem;
+    background-color: var(--primary-color);
+    margin: 0.7rem auto 0 auto;
+    border-radius: 0.2rem;
+}
+
+/* ================================
+   Chart Card
+   Generic container for all charts.
+================================ */
+.chart-card {
+    background-color: var(--surface-color);
+    border: 0.125rem solid var(--primary-color);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 20rem;
+    min-width: 0;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.chart-card:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 0.5rem 1.5rem rgba(124, 90, 184, 0.2);
+}
+
+/* ================================
+   Summary Charts Row
+   Top row displaying key stats.
+================================ */
+.summary-charts-row {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+    min-width: 0;
+}
+
+/* Content inside summary cards */
+.summary-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+/* Large statistic number */
+.large-stat {
+    font-size: 4.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+/* ================================
+   Charts Grid
+   Layout for all detailed charts.
+================================ */
+.charts-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+    min-width: 0;
+}
+
+/* Chart title */
+.chart-card h3 {
+    margin: 0 0 1rem 0;
+    font-size: 1.4rem;
+    text-align: center;
+    color: var(--text-color);
+}
+
+/* Full-width chart */
+.chart-card.full-width {
+    grid-column: span 2;
+}
+
+/* ================================
+   Canvas Container
+   Wrapper for charts (Chart.js).
+================================ */
+.canvas-container {
+    position: relative;
+    width: 100%;
+    height: 20rem;
+    min-width: 0;
+    overflow: hidden;
+}
+
+/* Smaller chart variant */
+.canvas-container.small {
+    height: 12rem;
+}
+
+/* Larger chart variant */
+.canvas-container.large {
+    height: 25rem;
+}
+
+/* Canvas scaling fix */
+.canvas-container canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+}
+
+/* ================================
+   Chart Overlay Text
+   Text displayed on top of charts.
+================================ */
+.chart-overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    pointer-events: none;
+    margin: 0;
+}
+
+/* ================================
+   Responsive Layout
+   Stack all charts vertically on smaller screens.
+================================ */
+@media (max-width: 75rem) {
+    .summary-charts-row,
+    .charts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .chart-card.full-width {
+        grid-column: span 1;
+    }
+}

@@ -1,0 +1,196 @@
+/* ================================
+   Navigation Bar - List Container
+   Main flex container for all nav items.
+================================ */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    height: 60px;
+    gap: 1rem;
+}
+
+/* ================================
+   Navigation Items (li)
+   Each navigation item styled as a box.
+================================ */
+nav li {
+    border: 3px solid var(--primary-hover);
+    border-radius: var(--border-radius);
+    font-size: 1.6rem;
+    color: var(--navbar-link-color);
+    flex: 1 1 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+/* Prevent overflow for regular nav items (not dropdown). */
+nav li:not(.user-menu) {
+    overflow: hidden;
+}
+
+/* ================================
+   Navigation Links & Content
+   Makes links fill the entire nav item.
+================================ */
+nav li > a,
+.nav-item-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Basic link styling. */
+nav a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Hover effect for links. */
+nav a:hover {
+    color: var(--navbar-link-hover-color);
+}
+
+/* ================================
+   Logo Section
+   Displays logo image + text together.
+================================ */
+.logo-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    height: 100%;
+}
+
+/* Logo image size. */
+.logo-img {
+    height: 28px;
+    width: auto;
+}
+
+/* Logo text styling. */
+.logo-text {
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+
+/* Slight fade effect on hover. */
+.logo-link:hover {
+    opacity: 0.85;
+}
+
+/* ================================
+   User Menu (Dropdown Container)
+   Holds the user dropdown menu.
+================================ */
+.user-menu {
+    position: relative;
+    overflow: visible;
+}
+
+/* ================================
+   Dropdown Menu
+   Hidden menu that appears on hover.
+================================ */
+.user-dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    min-width: 100%;
+    background-color: var(--surface-color);
+    border: 2px solid var(--primary-hover);
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 2000;
+    box-shadow: 0 0.7rem 1.4rem rgba(124, 90, 184, 0.25);
+}
+
+/* Show dropdown when hovering user menu. */
+.user-menu:hover .user-dropdown {
+    display: flex;
+}
+
+/* Dropdown links styling. */
+.user-dropdown a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0.9rem 1rem;
+    text-align: center;
+    color: var(--navbar-link-color);
+    background-color: var(--surface-color);
+    white-space: nowrap;
+    font-size: 1.35rem;
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Remove border from last item. */
+.user-dropdown a:last-child {
+    border-bottom: none;
+}
+
+/* Hover effect for dropdown items. */
+.user-dropdown a:hover {
+    background-color: var(--chart-secondary-color);
+    color: var(--primary-hover);
+}
+
+/* ================================
+   Responsive Design - Mobile
+   Adjusts navbar layout for small screens.
+================================ */
+@media (max-width: 800px) {
+    nav ul {
+        height: 60px;
+        padding: 0 0.5rem;
+        gap: 0.4rem;
+        flex-direction: row;
+    }
+
+    nav li {
+        width: auto;
+        min-width: 0;
+        font-size: 1rem;
+        border-width: 2px;
+    }
+
+    nav li > a,
+    .nav-item-content {
+        padding: 0.5rem;
+        white-space: nowrap;
+    }
+
+    .logo-text {
+        font-size: 1rem;
+    }
+
+    .logo-img {
+        height: 22px;
+    }
+
+    .user-dropdown {
+        position: absolute;
+        width: 100%;
+        box-shadow: 0 0.7rem 1.4rem rgba(124, 90, 184, 0.25);
+    }
+
+    .user-dropdown a {
+        font-size: 1rem;
+        padding: 0.7rem;
+    }
+}

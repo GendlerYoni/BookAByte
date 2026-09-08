@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>BookAByte - הזמנות קרובות</title>
+
+  <script type="module" src="/js/customerAccess.js"></script>
+
+  <link rel="stylesheet" href="/css/navbarStyle.css">
+  <link rel="stylesheet" href="/css/commonStyle.css">
+  <link rel="stylesheet" href="/css/reservationsListStyle.css">
+</head>
+<body>
+
+<div th:replace="~{navigationBar :: navbar}"></div>
+
+<div class="reservations-page-container">
+
+  <section class="reservations-header-card">
+
+    <div class="reservations-page-header">
+      <h2>ההזמנות הקרובות שלך</h2>
+    </div>
+
+  </section>
+
+  <div id="statusMessage" class="status-message hidden"></div>
+
+  <section id="reservationsContainer" class="reservations-cards-container">
+  </section>
+
+</div>
+
+<script type="module" src="/js/reservationUpcoming.js"></script>
+
+</body>
+</html>

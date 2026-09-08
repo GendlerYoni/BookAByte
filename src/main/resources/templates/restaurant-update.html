@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>עדכון מסעדה</title>
+
+    <script type="module" src="/js/adminAccess.js"></script>
+
+    <link rel="stylesheet" href="/css/navbarStyle.css">
+    <link rel="stylesheet" href="/css/commonStyle.css">
+    <link rel="stylesheet" href="/css/restaurantFormStyle.css">
+    <link rel="stylesheet" href="/css/restaurantUpdateStyle.css">
+</head>
+<body>
+
+<div th:replace="~{navigationBar :: navbar}"></div>
+
+<div class="restaurant-form-page">
+    <div class="restaurant-form-card">
+
+        <h2 class="page-title">עדכון פרטי מסעדה</h2>
+        <p class="page-subtitle">עדכנו את הפרטים הרצויים ושמרו שינויים.</p>
+
+        <div id="errorMessage" class="error-message hidden"></div>
+        <div id="successMessage" class="success-message hidden"></div>
+
+        <form id="updateRestaurantForm" class="restaurant-form">
+            <input type="hidden" id="restaurantId" name="restaurantId">
+
+            <div class="form-group">
+                <label for="name">שם המסעדה:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="description">תיאור המסעדה:</label>
+                <textarea id="description" name="description" rows="3" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="capacity">מספר סועדים מקסימאלי (קיבולת):</label>
+                <input type="number" id="capacity" name="capacity" min="1" required>
+            </div>
+
+            <div class="time-row">
+                <div class="form-group">
+                    <label for="openingHour">שעת פתיחה:</label>
+                    <select id="openingHour" name="openingHour" required>
+                        <option value="" disabled selected>בחר שעה</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="closingHour">שעת סגירה:</label>
+                    <select id="closingHour" name="closingHour" required>
+                        <option value="" disabled selected>בחר שעה</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="restaurantType">סוג מסעדה:</label>
+                <select id="restaurantType" name="restaurantType" required>
+                    <option value="" disabled selected>בחר סוג מסעדה</option>
+                    <option value="ITALIAN">איטלקי</option>
+                    <option value="ASIAN">אסייתי</option>
+                    <option value="MEAT">בשרי</option>
+                    <option value="VEGAN">טבעוני</option>
+                    <option value="BURGER">המבורגר</option>
+                    <option value="PIZZA">פיצה</option>
+                </select>
+            </div>
+
+            <div class="current-image-section">
+                <p class="current-image-label">התמונה הנוכחית:</p>
+                <img id="currentRestaurantImage" class="current-restaurant-image" alt="תמונת המסעדה">
+            </div>
+
+            <div class="form-group">
+                <label for="image">החלפת תמונה (אופציונאלי):</label>
+                <input type="file" id="image" name="image" accept="image/*">
+            </div>
+
+            <button type="submit">שמור שינויים</button>
+        </form>
+
+    </div>
+</div>
+
+<script type="module" src="/js/restaurantUpdate.js"></script>
+
+</body>
+</html>

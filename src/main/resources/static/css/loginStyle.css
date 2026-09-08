@@ -1,0 +1,126 @@
+/* ================================
+   Login Container
+   Main layout container for the login page.
+   Divides the page into two halves:
+   image (right) and form (left).
+================================ */
+.login-container {
+    max-width: 70rem;
+    min-height: 40rem;
+    margin: 5rem auto 0 auto;
+
+    background-color: var(--surface-color);
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius);
+
+    display: flex;
+    overflow: hidden;
+}
+
+/* ================================
+   Layout Sections (Left / Right)
+   Each side takes 50% of the container.
+================================ */
+.login-right,
+.login-left {
+    width: 50%;
+}
+
+/* ================================
+   Right Side Image
+   Displays a full-size image that fills
+   the right half of the login container.
+================================ */
+.login-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ================================
+   Left Side (Form Area)
+   Centers the login form and text
+   vertically and horizontally.
+================================ */
+.login-left {
+    padding: 4rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ================================
+   Login Title
+   Main heading for the login form.
+================================ */
+.login-left h2 {
+    margin: 0;
+    font-size: 3rem;
+    color: var(--text-color);
+}
+
+/* Decorative underline for the title. */
+.login-left h2::after {
+    content: "";
+    display: block;
+    width: 4rem;
+    height: 4px;
+    background-color: var(--primary-color);
+    margin: 0.5rem auto 0 auto;
+    border-radius: 2px;
+}
+
+/* ================================
+   Login Form Layout
+   Controls the width and spacing
+   of the form inside the container.
+================================ */
+.login-left form {
+    width: 100%;
+    max-width: 32rem;
+    margin-top: 2.5rem;
+}
+
+/* Subtitle text under the title. */
+.login-subtitle {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    color: var(--secondary-text-color);
+}
+
+/* ================================
+   Login Button
+   Full-width button styling specific
+   to the login form.
+================================ */
+.login-left button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* ================================
+   Register Link
+   Link that navigates users to the
+   registration page.
+================================ */
+.register-link {
+    display: block;
+    margin: 1rem auto 1.5rem auto;
+    font-size: 1.1rem;
+    color: var(--secondary-text-color);
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    width: fit-content;
+}
+
+/* Hover effect for register link. */
+.register-link:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}

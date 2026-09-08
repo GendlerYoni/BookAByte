@@ -1,0 +1,160 @@
+/* ================================
+   Register Container
+   Main layout for the register page.
+   Splits the screen into image + form.
+================================ */
+.register-container {
+    max-width: 90rem;
+    min-height: 50rem;
+    margin: 1.5rem auto 0 auto;
+
+    background-color: var(--surface-color);
+    border: 2px solid var(--primary-color);
+    border-radius: var(--border-radius);
+
+    display: flex;
+    overflow: hidden;
+}
+
+/* ================================
+   Layout Sections (Left / Right)
+   Each side takes half the container.
+================================ */
+.register-right,
+.register-left {
+    width: 50%;
+}
+
+/* ================================
+   Right Side Image
+   Displays full-height image.
+================================ */
+.register-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* ================================
+   Left Side (Form Area)
+   Holds registration form and text.
+================================ */
+.register-left {
+    padding: 3rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* ================================
+   Register Title
+   Main heading of the page.
+================================ */
+.register-left h2 {
+    margin: 0;
+    font-size: 3rem;
+    color: var(--text-color);
+}
+
+/* Decorative underline for title. */
+.register-left h2::after {
+    content: "";
+    display: block;
+    width: 4rem;
+    height: 4px;
+    background-color: var(--primary-color);
+    margin: 0.5rem auto 0 auto;
+    border-radius: 2px;
+}
+
+/* Subtitle below title. */
+.register-subtitle {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    color: var(--secondary-text-color);
+}
+
+/* ================================
+   Form Layout
+   Controls form width and spacing.
+================================ */
+.register-left form {
+    width: 100%;
+    max-width: 32rem;
+    margin-top: 1.5rem;
+}
+
+/* Register button styling. */
+.register-left button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+/* ================================
+   Role Selection (Radio Buttons)
+   Allows choosing user type.
+================================ */
+.role-group {
+    align-items: center;
+    text-align: center;
+}
+
+/* Role section title. */
+.role-title {
+    font-size: 1.4rem;
+    color: var(--secondary-text-color);
+}
+
+/* Container for radio options. */
+.role-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 0.8rem;
+}
+
+/* Individual role label. */
+.role-options label {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: var(--secondary-text-color);
+    cursor: pointer;
+    margin-bottom: 0;
+    font-size: 1.2rem;
+    white-space: nowrap;
+}
+
+/* Radio button styling. */
+.role-options input[type="radio"] {
+    transform: scale(1.4);
+    accent-color: var(--primary-color);
+    cursor: pointer;
+}
+
+/* ================================
+   Login Link
+   Link for navigating back to login page.
+================================ */
+.login-link {
+    display: block;
+    margin: 1rem auto 1.5rem auto;
+    font-size: 1.1rem;
+    color: var(--secondary-text-color);
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+    width: fit-content;
+}
+
+/* Hover effect for login link. */
+.login-link:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}

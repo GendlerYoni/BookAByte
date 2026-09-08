@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>הוספת מסעדה</title>
+
+  <script type="module" src="/js/adminAccess.js"></script>
+
+  <link rel="stylesheet" href="/css/navbarStyle.css">
+  <link rel="stylesheet" href="/css/commonStyle.css">
+  <link rel="stylesheet" href="/css/restaurantFormStyle.css">
+</head>
+<body>
+
+<div th:replace="~{navigationBar :: navbar}"></div>
+
+<div class="restaurant-form-page">
+  <div class="restaurant-form-card">
+
+    <h2 class="page-title">הוספת מסעדה חדשה</h2>
+
+    <div id="errorMessage" class="error-message hidden"></div>
+    <div id="successMessage" class="success-message hidden"></div>
+
+    <form id="createRestaurantForm" class="restaurant-form">
+
+      <div class="form-group">
+        <label for="name">שם המסעדה:</label>
+        <input type="text" id="name" name="name" placeholder="מקדונלדס" required>
+      </div>
+
+      <div class="form-group">
+        <label for="description">תיאור המסעדה:</label>
+        <textarea id="description" name="description" rows="3" placeholder="תיאור המסעדה" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="capacity">מספר סועדים מקסימאלי (קיבולת):</label>
+        <input type="number" id="capacity" name="capacity" min="1" placeholder="80" required>
+      </div>
+
+      <div class="time-row">
+        <div class="form-group">
+          <label for="openingHour">שעת פתיחה:</label>
+          <select id="openingHour" name="openingHour" required>
+            <option value="" disabled selected>בחר שעה</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="closingHour">שעת סגירה:</label>
+          <select id="closingHour" name="closingHour" required>
+            <option value="" disabled selected>בחר שעה</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="restaurantType">סוג מסעדה:</label>
+        <select id="restaurantType" name="restaurantType" required>
+          <option value="" disabled selected>בחר סוג מסעדה</option>
+          <option value="ITALIAN">איטלקי</option>
+          <option value="ASIAN">אסייתי</option>
+          <option value="MEAT">בשרי</option>
+          <option value="VEGAN">טבעוני</option>
+          <option value="BURGER">המבורגר</option>
+          <option value="PIZZA">פיצה</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="image">תמונה: (אופציונאלי, תוכלו להוסיף גם בעתיד בעמוד עדכון המסעדה)</label>
+        <input type="file" id="image" name="image" accept="image/*">
+      </div>
+
+      <button type="submit">צור מסעדה</button>
+
+    </form>
+  </div>
+</div>
+
+<script type="module" src="/js/restaurantCreate.js"></script>
+
+</body>
+</html>

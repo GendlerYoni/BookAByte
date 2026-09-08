@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>BookAByte - מסעדות</title>
+    <link rel="stylesheet" href="/css/navbarStyle.css">
+    <link rel="stylesheet" href="/css/commonStyle.css">
+    <link rel="stylesheet" href="/css/homeStyle.css">
+</head>
+<body>
+
+<div th:replace="~{navigationBar :: navbar}"></div>
+
+<div class="homepage-container">
+
+    <section class="filters-card">
+
+        <div class="homepage-header">
+            <h2>חיפוש המסעדה הבאה</h2>
+            <p class="homepage-subtitle">חיפוש מסעדות, סינון לפי סוג ודירוג, ומעבר להזמנת שולחן.</p>
+        </div>
+
+        <div class="filters-layout">
+
+            <div class="right-filters">
+                <div class="search-group">
+                    <label for="searchInput">חיפוש לפי שם מסעדה:</label>
+                    <input type="text" id="searchInput" placeholder="לדוגמה: Pizza Roma">
+                </div>
+
+                <div class="rating-filter-group">
+                    <span class="rating-title">דירוג מינימלי:</span>
+                    <div class="rating-controls">
+                        <div class="star-rating-filter">
+                            <input type="radio" id="filterStar5" name="ratingFilter" value="5">
+                            <label for="filterStar5">★</label>
+                            <input type="radio" id="filterStar4" name="ratingFilter" value="4">
+                            <label for="filterStar4">★</label>
+                            <input type="radio" id="filterStar3" name="ratingFilter" value="3">
+                            <label for="filterStar3">★</label>
+                            <input type="radio" id="filterStar2" name="ratingFilter" value="2">
+                            <label for="filterStar2">★</label>
+                            <input type="radio" id="filterStar1" name="ratingFilter" value="1">
+                            <label for="filterStar1">★</label>
+                        </div>
+                        <button type="button" id="clearRatingFilterBtn" >ניקוי הדירוג</button>
+                        <button type="button" id="resetAllBtn" class="reset-link">אפס את כל המסננים</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="left-filters">
+                <span class="type-filter-title">סוג מסעדה:</span>
+                <div class="type-buttons-grid">
+                    <button type="button" class="type-filter-btn" data-type="ITALIAN">איטלקי</button>
+                    <button type="button" class="type-filter-btn" data-type="ASIAN">אסיאתי</button>
+                    <button type="button" class="type-filter-btn" data-type="MEAT">בשרי</button>
+                    <button type="button" class="type-filter-btn" data-type="VEGAN">טבעוני</button>
+                    <button type="button" class="type-filter-btn" data-type="BURGER">המבורגר</button>
+                    <button type="button" class="type-filter-btn" data-type="PIZZA">פיצה</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div id="statusMessage" class="status-message hidden"></div>
+
+    <section id="restaurantsContainer" class="restaurants-container"></section>
+
+</div>
+
+<script type="module" src="/js/home.js"></script>
+
+</body>
+</html>
