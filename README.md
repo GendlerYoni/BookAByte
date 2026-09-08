@@ -93,7 +93,32 @@ When a reservation is created, the application acquires a pessimistic write lock
 
 This prevents two concurrent requests from independently reading the same available capacity and both successfully reserving it.
 
-The project also includes an integration test that executes concurrent reservation attempts against limited remaining capacity and verifies that only the valid reservation succeeds.
+The project includes an integration test that executes concurrent reservation attempts against limited remaining capacity and verifies that only the valid reservation succeeds.
+
+## Testing
+
+The project includes both unit and integration tests covering core backend behavior.
+
+Test coverage includes:
+
+- Reservation availability and business rules
+- User authentication and password hashing
+- Service-layer behavior
+- Concurrent reservation creation with limited remaining capacity
+
+Run the full test suite with:
+
+### Windows
+
+```powershell
+.\mvnw.cmd test
+```
+
+### macOS / Linux
+
+```bash
+./mvnw test
+```
 
 ## Data Model
 
@@ -177,14 +202,14 @@ Reservations connect customers with restaurants, while reviews associate custome
 
 Maven does not need to be installed separately because the project includes the Maven Wrapper.
 
-### 1. Clone the repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/GendlerYoni/BookAByte.git
 cd BookAByte
 ```
 
-### 2. Run the application
+### 2. Run the Application
 
 #### Windows
 
@@ -198,7 +223,7 @@ cd BookAByte
 ./mvnw spring-boot:run
 ```
 
-### 3. Open the application
+### 3. Open the Application
 
 Once the application starts, open:
 
@@ -219,7 +244,7 @@ The application uses a local H2 file database. On the first run, the database is
 
 BookAByte was originally developed as a university software project.
 
-The current repository includes additional cleanup, testing, concurrency handling, and documentation while preserving the original application scope.
+The current repository includes additional cleanup, password hashing, testing, concurrency testing, and documentation while preserving the original application scope.
 
 The project demonstrates Java and Spring backend development, database-backed business logic, layered application design, testing, and concurrent request handling.
 
